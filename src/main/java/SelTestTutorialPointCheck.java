@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -23,6 +24,10 @@ public class SelTestTutorialPointCheck {
         public void checkBoxTest(){
 
             ovladac.get("https://www.tutorialspoint.com/selenium/practice/text-box.php");
+            ovladac.findElement(By.xpath("//*[@id=\"bs_1\"]/span[1]")).click();
+            ovladac.findElement(By.id("c_bf_1")).click();
+            ovladac.findElement(By.id("c_bf_2")).click();
+
 
 
         }
