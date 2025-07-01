@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SelTestTutorialPointCheck {
@@ -31,10 +32,12 @@ public class SelTestTutorialPointCheck {
 
             ovladac.get("https://www.tutorialspoint.com/selenium/practice/check-box.php");
             ovladac.findElement(By.xpath("//*[@id=\"bs_1\"]/span[1]")).click();
+
             ovladac.findElement(By.id("c_bf_1")).click();
             ovladac.findElement(By.id("c_bf_2")).click();
-
             assertTrue(ovladac.findElement(By.id("c_bs_1")).isSelected());
+            ovladac.findElement(By.id("c_bf_1")).click();
+            assertFalse(ovladac.findElement(By.id("c_bs_1")).isSelected());
 
 
         }
